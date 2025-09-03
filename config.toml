@@ -1,0 +1,24 @@
+baseURL = "https://example.com/"
+languageCode = "en-us"
+title = "My Test Documentation"
+theme = "custom-theme"
+enableRobotsTXT = true
+
+# Paramètres pour le CSS personnalisé
+[params]
+  customCSS = ["css/custom.css"]
+
+# Options de menu (exemple minimal)
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+
+  [[menu.main]]
+    name = "Docs"
+    url = "/docs/"
+    weight = 2
+
+# Options facultatives pour la pagination, etc.
+paginate = 10
