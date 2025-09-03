@@ -27,6 +27,3 @@
 * GitHub will automatically render the Markdown for you — no extra steps needed.
 
 That's it! You've successfully created your first basic Markdown documentation, hosted and readable on GitHub.
-
-
-
