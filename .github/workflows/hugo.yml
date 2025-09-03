@@ -29,5 +29,5 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GH_PAT }}  # Token dedicated to workflows
+          personal_token: ${{ secrets.GH_PAT }}  # Token dedicated to workflows
           publish_dir: ./public  # folder where Hugo outputs the compiled site
