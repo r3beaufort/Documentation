@@ -1,4 +1,4 @@
-name: Build Hugo site
+name: Build and Deploy Hugo site
 
 # Trigger workflow on push to main branch
 on:
@@ -21,13 +21,14 @@ jobs:
         with:
           hugo-version: '0.111.3'  # specify the Hugo version you want
 
-      # Step 3: Build the site with your custom theme
-      - name: Build
-        run: hugo --minify --theme custom-theme  # Hugo will use your custom theme folder and custom.css
+      # Step 3: Build the site using your custom theme
+      - name: Build site
+        run: hugo --minify --theme custom-theme
 
-      # Step 4: Deploy to GitHub Pages
+      # Step 4: Deploy to GitHub Pages using your PAT
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          personal_token: ${{ secrets.GH_PAT }}  # Token dedicated to workflows
-          publish_dir: ./public  # folder where Hugo outputs the compiled site
+          personal_token: ${{ secrets.GH_PAT }}   # <-- your PAT stored as a secret
+          publish_dir: ./public
+          force_orphan: true   # create gh-pages branch if it doesn't exist
